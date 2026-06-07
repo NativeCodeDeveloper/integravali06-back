@@ -11,6 +11,8 @@ class DataBase {
             password: process.env.DB_PASS,
             database: process.env.DB_DATABASE,
             port: Number(process.env.DB_PORT || 3306), // ahora se incluye el puerto
+            // Los campos DATE representan dias calendario, no instantes UTC.
+            dateStrings: ['DATE'],
             waitForConnections: true,
             connectionLimit: Number(process.env.DB_POOL_LIMIT || 10),
             queueLimit: 0
